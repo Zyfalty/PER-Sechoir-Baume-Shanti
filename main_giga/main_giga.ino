@@ -154,7 +154,7 @@ void fsm_update(Entrees e) {
     case CIRCUIT_FERME:
       if (trop_froid(e) || !plage_ok(e) || tps_ecoule()) {
         changer(ARRET);
-      } else if (e.Text > maxi3(e.Tdes, e.Tv1, e.Tv2)
+      } else if (e.Text > max_des_3(e.Tdes, e.Tv1, e.Tv2)
                  && e.Text > TLIM_DES) {
         changer(CIRCUIT_OUVERT);
       }
